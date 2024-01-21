@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расчёт выбросов диоксида углерода (CO2-эквивалента)
+    </title>
+
+    <link rel="stylesheet" href="sourse/style/style.css">
+    <script src="sourse/JS/calc_20180701.js"></script>
+</head>
+<body>
+    <div class="well">
+        <form class="form-horizontal">
+        <h3>Расчёт выбросов диоксида углерода (CO2-эквивалента)</h3>
+        <div class="control-group">
+        <div class="control-label"><label class="hasTooltip required" title="" data-original-title="Выберите наименование вида топлива">Вид топлива:</label></div>
+        <div class="controls"><select id="fuel" onchange="calculatorco2();">
+            <optgroup label="1. топливо">
+            <option value="t-1.603">природный газ</option>
+                      <option value="t-3.581">уголь</option>
+                      <option value="t-4.412">торф</option>	
+            </optgroup>
+            <optgroup label="2. моторное топливо">
+            <option value="t-2.013">бензин</option>
+            <option value="t-2.109">керосин</option>
+            <option value="t-2.172">дизельное топливо</option>
+            </optgroup>
+        </select></div>
+        </div>
+        <div class="control-group">
+        <div class="control-label"><label class="hasTooltip required" title="" data-original-title="Переводной коэффициент">Переводной коэффициент:</label></div>
+        <div class="controls bbb ten-dance"><label id="koefTxt" style="padding-top: 5px;">1.603</label></div>
+        </div>
+        <div class="control-group">
+        <div class="control-label"><label class="hasTooltip required" title="" data-original-title="Введите количество топлива">Количество топлива:</label></div>
+        <div class="controls ten-dance"><input id="q" type="text" value="1" onchange="calculatorco2();"><label id="measure" style="display: inline-block; margin-left: 4px;">т у.т.</label></div>
+        </div>
+        <div class="control-group">
+        <div class="control-label"><label class="hasTooltip required" title="" data-original-title="Количество CO² эквивалента, т">Количество CO2-эквивалента:</label></div>
+        <div class="controls aaa ten-dance"><label id="total" style="display: inline-block; padding-top: 5px;">1.603</label><label style="display: inline-block; margin-left: 4px; padding-top: 5px;">т&nbsp;CO²</label></div>
+        
+        </div>
+        
+        <input class="btn btn-large" onclick="calculatorco2()" type="button" value="Расчет выбросов CO2-эквивалента">
+        </form>
+        </div>
+    
+</body>
+</html>
